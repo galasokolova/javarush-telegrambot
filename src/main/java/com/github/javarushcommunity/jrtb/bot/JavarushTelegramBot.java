@@ -12,7 +12,7 @@ import static com.github.javarushcommunity.jrtb.command.CommandName.NO;
 @Component
 public class JavarushTelegramBot extends TelegramLongPollingBot {
 
-    public static String COMMAND_PREFIX = "/";
+    public static final String COMMAND_PREFIX = "/";
 
     @Value("${bot.username}")
     private String username;
