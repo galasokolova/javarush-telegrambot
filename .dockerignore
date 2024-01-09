@@ -1,0 +1,38 @@
+# Файлы и папки среды разработки и репозитория
+.git
+*.env
+.gitignore
+.idea/
+*.iml
+*.class
+
+# Папки Maven и файлы сборки
+!.mvn/wrapper/maven-wrapper.jar
+mvnw
+mvnw.cmd
+pom.xml
+
+# Логи и кеш системы
+logs/
+*.log
+*.tmp
+*.temp
+
+# Файлы операционной системы
+.DS_Store
+Thumbs.db
+
+# Специфичные файлы для операционных систем
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Скомпилированные файлы классов и пакеты
+bin/
+out/
+build/
+
+# Зависимости
+dependency-reduced-pom.xml
+lib/
