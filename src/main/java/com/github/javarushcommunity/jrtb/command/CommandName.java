@@ -5,7 +5,8 @@ public enum CommandName {
     START("/start"),
     STOP("/stop"),
     HELP("/help"),
-    NO("no_command");
+    NO("no_command"),
+    STAT("/stat");
 
     private final String commandName;
 
