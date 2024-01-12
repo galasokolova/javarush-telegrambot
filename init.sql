@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS jrtb_db;
+USE jrtb_db;

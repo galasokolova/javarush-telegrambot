@@ -9,6 +9,7 @@ COPY . /app
 # Копирование приложения и его конфигураций
 COPY target/javarush-telegrambot-0.1.0-SNAPSHOT.jar /app/javarush-telegrambot.jar
 COPY src/main/resources/application.properties /app/config/
+COPY target/classes/db/migration /app/resources/db/migration
 
 # Копирование и установка скриптов запуска
 COPY scripts/entrypoint.sh /scripts/entrypoint.sh

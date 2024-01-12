@@ -1,4 +1,4 @@
-version: '4.25.2'
+version: '4.26.1'
 
 services:
   jrtb:
@@ -6,3 +6,24 @@ services:
     env_file:
       - credentials.env
     restart: always
+    depends_on:
+      - db # Указывает, что jrtb должен запуститься после db
+
+  db:
+    image: mysql:8.0
+    env_file:
+      - credentials.env
+    restart: always
+    ports:
+      - "3306:3306"
+    expose:
+      # Opens port 3306 on the container
+      - "3306"
+
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+
+volumes:
+  db_data:
