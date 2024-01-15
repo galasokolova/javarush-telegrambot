@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>17</java.version>
 		<mysql.version>8.0.33</mysql.version>
+		<unirest.version>3.14.5</unirest.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -95,6 +96,12 @@
 			<artifactId>jaxb-runtime</artifactId>
 			<version>2.3.1</version>
 		</dependency>
+		<dependency>
+			<groupId>com.konghq</groupId>
+			<artifactId>unirest-java</artifactId>
+			<version>${unirest.version}</version>
+		</dependency>
+
 
 	</dependencies>
 
