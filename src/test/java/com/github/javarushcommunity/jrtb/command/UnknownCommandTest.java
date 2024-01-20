@@ -1,6 +1,7 @@
-package com.github.javarushcommunity.jrtb;
+package com.github.javarushcommunity.jrtb.command;
 
 
+import com.github.javarushcommunity.jrtb.command.AbstractCommandTest;
 import com.github.javarushcommunity.jrtb.command.Command;
 import com.github.javarushcommunity.jrtb.command.UnknownCommand;
 import org.junit.jupiter.api.DisplayName;

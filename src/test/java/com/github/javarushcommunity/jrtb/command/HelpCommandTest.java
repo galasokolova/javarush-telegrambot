@@ -1,7 +1,5 @@
-package com.github.javarushcommunity.jrtb;
+package com.github.javarushcommunity.jrtb.command;
 
-import com.github.javarushcommunity.jrtb.command.Command;
-import com.github.javarushcommunity.jrtb.command.HelpCommand;
 import org.junit.jupiter.api.DisplayName;
 
 import static com.github.javarushcommunity.jrtb.command.CommandName.HELP;
@@ -12,7 +10,7 @@ public class HelpCommandTest extends AbstractCommandTest {
 
     @Override
     String getCommandName() {
-        return HELP.getCommandName();
+        return HELP.getName();
     }
 
     @Override
@@ -22,6 +20,6 @@ public class HelpCommandTest extends AbstractCommandTest {
 
     @Override
     Command getCommand() {
-        return new HelpCommand(sendBotMessageService, telegramUserService);
+        return new HelpCommand(sendBotMessageService);
     }
 }

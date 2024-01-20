@@ -23,14 +23,14 @@ class SendBotMessageServiceTest {
     }
 
     @Test
-     void shouldProperlySendMessage() throws TelegramApiException {
+    void shouldProperlySendMessage() throws TelegramApiException {
         //given
-        String chatId = "test_chat_id";
+        Long chatId = 123L;
         String message = "test_message";
 
         SendMessage sendMessage = new SendMessage();
         sendMessage.setText(message);
-        sendMessage.setChatId(chatId);
+        sendMessage.setChatId(chatId.toString());
         sendMessage.enableHtml(true);
 
         //when
@@ -40,4 +40,3 @@ class SendBotMessageServiceTest {
         Mockito.verify(javarushBot).execute(sendMessage);
     }
 }
-

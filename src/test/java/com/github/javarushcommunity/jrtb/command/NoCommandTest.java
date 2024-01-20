@@ -1,7 +1,5 @@
-package com.github.javarushcommunity.jrtb;
+package com.github.javarushcommunity.jrtb.command;
 
-import com.github.javarushcommunity.jrtb.command.Command;
-import com.github.javarushcommunity.jrtb.command.NoCommand;
 import org.junit.jupiter.api.DisplayName;
 
 import static com.github.javarushcommunity.jrtb.command.CommandName.NO;
@@ -12,7 +10,7 @@ public class NoCommandTest extends AbstractCommandTest {
 
     @Override
     String getCommandName() {
-        return NO.getCommandName();
+        return NO.getName();
     }
 
     @Override
