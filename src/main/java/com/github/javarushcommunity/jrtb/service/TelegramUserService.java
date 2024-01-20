@@ -1,15 +1,38 @@
 package com.github.javarushcommunity.jrtb.service;
 
-import com.github.javarushcommunity.jrtb.entity.TelegramUser;
+import com.github.javarushcommunity.jrtb.repository.entity.TelegramUser;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface TelegramUserService {
 
-    void save (TelegramUser telegramUser);
+    /**
+     * Save provided {@link TelegramUser} entity.
+     *
+     * @param  telegramUser provided telegram user.
+     */
+    void save(TelegramUser telegramUser);
 
-    List<TelegramUser> retrieveAllActiveUsers();
+    /**
+     * Find all active {@link TelegramUser}.
+     *
+     * @return the collection of the active {@link TelegramUser} objects.
+     */
+    List<TelegramUser> findAllActiveUsers();
 
-    Optional<TelegramUser> findByChatId (String chatId);
+    /**
+     * Find all inactive {@link TelegramUser}
+     *
+     * @return the collection of the inactive {@link TelegramUser} objects.
+     */
+    List<TelegramUser> findAllInActiveUsers();
+
+    /**
+     * Find {@link TelegramUser} by chatId.
+     *
+     * @param chatId provided Chat ID
+     * @return {@link TelegramUser} with provided chat ID or null otherwise.
+     */
+    Optional<TelegramUser> findByChatId(Long chatId);
 }

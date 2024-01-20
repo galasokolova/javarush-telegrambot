@@ -3,11 +3,12 @@ package com.github.javarushcommunity.jrtb;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 import com.github.javarushcommunity.jrtb.bot.JavarushTelegramBot;
-
+//@EnableScheduling
 @SpringBootApplication
 public class JavarushTelegramBotApplication {
 
@@ -20,5 +21,7 @@ public class JavarushTelegramBotApplication {
 		} catch (TelegramApiException e) {
 			e.printStackTrace();
 		}
+//		SpringApplication.run(JavarushTelegramBotApplication.class, args);
+
 	}
 }

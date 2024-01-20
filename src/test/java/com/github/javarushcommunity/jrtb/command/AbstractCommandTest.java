@@ -1,7 +1,6 @@
-package com.github.javarushcommunity.jrtb;
+package com.github.javarushcommunity.jrtb.command;
 
 import com.github.javarushcommunity.jrtb.bot.JavarushTelegramBot;
-import com.github.javarushcommunity.jrtb.command.Command;
 import com.github.javarushcommunity.jrtb.service.SendBotMessageService;
 import com.github.javarushcommunity.jrtb.service.SendBotMessageServiceImpl;
 import com.github.javarushcommunity.jrtb.service.TelegramUserService;
@@ -12,6 +11,9 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+/**
+ * Abstract class for testing {@link Command}s.
+ */
 abstract class AbstractCommandTest {
 
     protected JavarushTelegramBot javarushBot = Mockito.mock(JavarushTelegramBot.class);
@@ -29,11 +31,7 @@ abstract class AbstractCommandTest {
         //given
         Long chatId = 1234567824356L;
 
-        Update update = new Update();
-        Message message = Mockito.mock(Message.class);
-        Mockito.when(message.getChatId()).thenReturn(chatId);
-        Mockito.when(message.getText()).thenReturn(getCommandName());
-        update.setMessage(message);
+        Update update = prepareUpdate(chatId, getCommandName());
 
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId.toString());
@@ -45,5 +43,14 @@ abstract class AbstractCommandTest {
 
         //then
         Mockito.verify(javarushBot).execute(sendMessage);
+    }
+
+    public static Update prepareUpdate(Long chatId, String commandName) {
+        Update update = new Update();
+        Message message = Mockito.mock(Message.class);
+        Mockito.when(message.getChatId()).thenReturn(chatId);
+        Mockito.when(message.getText()).thenReturn(commandName);
+        update.setMessage(message);
+        return update;
     }
 }

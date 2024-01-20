@@ -1,7 +1,7 @@
 package com.github.javarushcommunity.jrtb.service;
 
-import com.github.javarushcommunity.jrtb.entity.TelegramUser;
-import com.github.javarushcommunity.jrtb.entity.TelegramUserRepository;
+import com.github.javarushcommunity.jrtb.repository.entity.TelegramUser;
+import com.github.javarushcommunity.jrtb.repository.TelegramUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class TelegramUserServiceImpl implements TelegramUserService{
+public class TelegramUserServiceImpl implements TelegramUserService {
 
     private final TelegramUserRepository telegramUserRepository;
 
@@ -24,12 +24,17 @@ public class TelegramUserServiceImpl implements TelegramUserService{
     }
 
     @Override
-    public List<TelegramUser> retrieveAllActiveUsers() {
+    public List<TelegramUser> findAllActiveUsers() {
         return telegramUserRepository.findAllByActiveTrue();
     }
 
     @Override
-    public Optional<TelegramUser> findByChatId(String chatId) {
+    public List<TelegramUser> findAllInActiveUsers() {
+        return telegramUserRepository.findAllByActiveFalse();
+    }
+
+    @Override
+    public Optional<TelegramUser> findByChatId(Long chatId) {
         return telegramUserRepository.findById(chatId);
     }
 }

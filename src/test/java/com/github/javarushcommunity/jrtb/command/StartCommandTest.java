@@ -1,7 +1,5 @@
-package com.github.javarushcommunity.jrtb;
+package com.github.javarushcommunity.jrtb.command;
 
-import com.github.javarushcommunity.jrtb.command.Command;
-import com.github.javarushcommunity.jrtb.command.StartCommand;
 import org.junit.jupiter.api.DisplayName;
 
 import static com.github.javarushcommunity.jrtb.command.CommandName.START;
@@ -12,7 +10,7 @@ class StartCommandTest extends AbstractCommandTest {
 
     @Override
     String getCommandName() {
-        return START.getCommandName();
+        return START.getName();
     }
 
     @Override

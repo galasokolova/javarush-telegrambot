@@ -1,8 +1,12 @@
-package com.github.javarushcommunity.jrtb.javarushclient.dto;
+package com.github.javarushcommunity.jrtb.javarushclient;
 
-
+import com.github.javarushcommunity.jrtb.javarushclient.dto.GroupDiscussionInfo;
+import com.github.javarushcommunity.jrtb.javarushclient.dto.GroupInfo;
+import com.github.javarushcommunity.jrtb.javarushclient.dto.GroupRequestArgs;
+import com.github.javarushcommunity.jrtb.javarushclient.dto.GroupsCountRequestArgs;
 
 import java.util.List;
+
 /**
  * Client for Javarush Open API corresponds to Groups.
  */
@@ -39,4 +43,6 @@ public interface JavaRushGroupClient {
      * @return {@link GroupDiscussionInfo} object.
      */
     GroupDiscussionInfo getGroupById(Integer id);
+
+    Integer findLastPostId(Integer groupSub);
 }
