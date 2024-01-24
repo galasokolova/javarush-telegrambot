@@ -5,6 +5,7 @@ import com.github.javarushcommunity.jrtb.dto.StatisticDTO;
 import com.github.javarushcommunity.jrtb.service.SendBotMessageService;
 import com.github.javarushcommunity.jrtb.service.StatisticsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.util.stream.Collectors;
@@ -13,6 +14,7 @@ import static com.github.javarushcommunity.jrtb.command.CommandUtils.getChatId;
 
 
 @AdminCommand
+@Component
 public class StatCommand implements Command {
 
     private final StatisticsService statisticsService;

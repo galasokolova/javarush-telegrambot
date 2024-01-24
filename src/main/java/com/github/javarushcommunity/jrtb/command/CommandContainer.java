@@ -7,6 +7,7 @@ import com.github.javarushcommunity.jrtb.service.SendBotMessageService;
 import com.github.javarushcommunity.jrtb.service.StatisticsService;
 import com.github.javarushcommunity.jrtb.service.TelegramUserService;
 import com.google.common.collect.ImmutableMap;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ import static java.util.Objects.nonNull;
 /**
  * Container of the {@link Command}s, which are using for handling telegram commands.
  */
+@Component
 public class CommandContainer {
 
     private final ImmutableMap<String, Command> commandMap;
