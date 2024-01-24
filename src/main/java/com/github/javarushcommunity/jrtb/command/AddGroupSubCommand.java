@@ -75,7 +75,7 @@ public class AddGroupSubCommand implements Command {
                 <b>Чтобы подписаться на группу - передай комадну вместе с ID группы.</b>
                 <b>Например: /addGroupSub 16.</b>
                 <b>я подготовил список всех групп - выберай какую хочешь :)</b>
-                <b>имя группы - ID группы</b
+                <b>имя группы - ID группы</b>
                 %s""";
 
         sendBotMessageService.sendMessage(chatId, String.format(message, groupIds));

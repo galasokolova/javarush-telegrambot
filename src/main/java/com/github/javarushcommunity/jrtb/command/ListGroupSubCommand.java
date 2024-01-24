@@ -35,7 +35,7 @@ public class ListGroupSubCommand implements Command {
             message = "Пока нет подписок на группы. Чтобы добавить подписку напиши /addGroupSub";
         } else {
             String collectedGroups = telegramUser.getGroupSubs().stream()
-                    .map(it -> "Группа: " + it.getTitle() + " , ID = " + it.getId() + " \n")
+                    .map(it -> "Группа: " + it.getTitle() + " , ID = " + it.getId() + " %n")
                     .collect(Collectors.joining());
             message =  String.format("Я нашел все подписки на группы: %n%n %s", collectedGroups);
         }

@@ -8,7 +8,7 @@ import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 import com.github.javarushcommunity.jrtb.bot.JavarushTelegramBot;
-//@EnableScheduling
+@EnableScheduling
 @SpringBootApplication
 public class JavarushTelegramBotApplication {
 

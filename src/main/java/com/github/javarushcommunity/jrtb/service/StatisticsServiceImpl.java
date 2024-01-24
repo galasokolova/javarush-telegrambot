@@ -3,13 +3,9 @@ package com.github.javarushcommunity.jrtb.service;
 import com.github.javarushcommunity.jrtb.dto.GroupStatDTO;
 import com.github.javarushcommunity.jrtb.dto.StatisticDTO;
 import com.github.javarushcommunity.jrtb.repository.entity.TelegramUser;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.springframework.util.CollectionUtils.isEmpty;
 
@@ -29,7 +25,7 @@ public class StatisticsServiceImpl  implements StatisticsService {
         List<GroupStatDTO> groupStatDTOS = groupSubService.findAll().stream()
                 .filter(it -> !isEmpty(it.getUsers()))
                 .map(groupSub -> new GroupStatDTO(groupSub.getId(), groupSub.getTitle(), groupSub.getUsers().size()))
-                .collect(Collectors.toList());
+                .toList();
         List<TelegramUser> allInActiveUsers = telegramUserService.findAllInActiveUsers();
         List<TelegramUser> allActiveUsers = telegramUserService.findAllActiveUsers();
 
